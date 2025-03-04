@@ -1,0 +1,3 @@
+[submodule "account_opening"]
+	path = account_opening
+	url = https://github.com/Harishthappa60/account_opening.git
