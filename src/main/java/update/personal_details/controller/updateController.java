@@ -11,8 +11,8 @@ public class updateController {
     @Autowired
     UpdateService service;
     @PutMapping("/Update_all")
-    public String updateAll(@RequestParam String name,@RequestParam String dob,@RequestParam String email,@RequestParam String mobile_number, long id){
-        return service.updateAll(name, dob, email, mobile_number, id);
+    public String updateAll(@RequestParam String created_date, @RequestParam String name,@RequestParam String dob,@RequestParam String email,@RequestParam String mobile_number,@RequestParam String updated_date,@RequestParam long id){
+        return service.updateAll(created_date,name, dob, email, mobile_number,updated_date, id);
     }
 
     @PutMapping("/update_name")
@@ -36,6 +36,16 @@ public class updateController {
     @PutMapping("/update_mobile_number")
     public String updateMobileNumber(@RequestParam String mobile_number, long id) {
         return service.updateMobileNumber(mobile_number, id);
+
+    }
+    @PutMapping("/update_updated_date")
+    public String updatedDate(@RequestParam String updated_date, long id) {
+        return service.updatedDate(updated_date, id);
+
+    }
+    @PutMapping("/update_created_date")
+    public String createdDate(@RequestParam String created_date, long id) {
+        return service.createdDate(created_date, id);
 
     }
 }
